@@ -8,7 +8,7 @@ C# Library Management
 - add student details - DONE
 - edit books details - DONE
 - delete books details
-- give books(issue books to student) to student
+- issue books to student 
 - return books from student and ass in available stock
 - search books
 - search student
