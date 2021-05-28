@@ -3,10 +3,10 @@ C# Library Management
 
 # TO DO
 
-- login
-- add book details
-- add student details
-- edit books details
+- login - DONE
+- add book details - DONE
+- add student details - DONE
+- edit books details - DONE
 - delete books details
 - give books(issue books to student) to student
 - return books from student and ass in available stock
