@@ -16,9 +16,11 @@ namespace Library
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new login());
+            Application.Run(new login());
+            //Application.Run(new add_books());
             //Application.Run(new add_student_info());
-            Application.Run(new view_student_info());
+            //Application.Run(new view_student_info());
+            //Application.Run(new issue_books());
         }
     }
 }

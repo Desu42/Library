@@ -24,15 +24,12 @@ namespace Library
             sql_con.Open();
             SqlCommand sql_cmd = sql_con.CreateCommand();
             sql_cmd.CommandType = CommandType.Text;
-            //ERROR HERE - because I don't convert from string to int
-            // TEMP SOLUTION - REFACTOR WITH CLASSES - nothing is more permanent than a temporary solution
-            // ALSO USE TRY PARSE
-            // STILL DOESN'T WORK.
 
-            int book_price = Convert.ToInt32(tb_price.Text);
-            int book_quantity = Convert.ToInt32(tb_quantity.Text);
+            //int book_price = Convert.ToInt32(tb_price.Text.ToString());
+            //int book_quantity = Convert.ToInt32(tb_quantity.Text.ToString());
 
-            sql_cmd.CommandText = "INSERT INTO books_info VALUES ('"+tb_book.Text+"', '"+tb_author.Text+"', '"+tb_publication.Text+"', '"+dtp_purchase.Value+"', "+book_price+", "+book_quantity+")";
+            sql_cmd.CommandText = "INSERT INTO books_info(books_name, books_author_name, books_publication_name, books_purchase_date, books_price, books_quantity) " +
+                "VALUES ('"+tb_book.Text+"','"+tb_author.Text+"','"+tb_publication.Text+"','"+dtp_purchase.Text+"',"+ tb_price.Text + ","+ tb_quantity.Text + ")";
             sql_cmd.ExecuteNonQuery();
             sql_con.Close();
 

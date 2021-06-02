@@ -129,5 +129,11 @@ namespace Library
             view_student_info vsi = new view_student_info();
             vsi.Show();
         }
+
+        private void issueBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            issue_books ib = new issue_books();
+            ib.Show();
+        }
     }
 }
