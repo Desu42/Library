@@ -58,7 +58,7 @@ namespace Library
             this.dgv_student.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_student.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_student.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_student.Location = new System.Drawing.Point(2, 2);
+            this.dgv_student.Location = new System.Drawing.Point(321, 2);
             this.dgv_student.Name = "dgv_student";
             this.dgv_student.RowHeadersWidth = 51;
             this.dgv_student.RowTemplate.Height = 24;
@@ -69,7 +69,7 @@ namespace Library
             // 
             // tb_search
             // 
-            this.tb_search.Location = new System.Drawing.Point(198, 460);
+            this.tb_search.Location = new System.Drawing.Point(38, 69);
             this.tb_search.Name = "tb_search";
             this.tb_search.Size = new System.Drawing.Size(195, 22);
             this.tb_search.TabIndex = 1;
@@ -79,7 +79,7 @@ namespace Library
             // 
             this.lbl_search.AutoSize = true;
             this.lbl_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_search.Location = new System.Drawing.Point(12, 460);
+            this.lbl_search.Location = new System.Drawing.Point(50, 26);
             this.lbl_search.Name = "lbl_search";
             this.lbl_search.Size = new System.Drawing.Size(162, 25);
             this.lbl_search.TabIndex = 3;
@@ -102,7 +102,7 @@ namespace Library
             this.panel1.Controls.Add(this.tb_enrolment_no);
             this.panel1.Controls.Add(this.tb_name);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(399, 460);
+            this.panel1.Location = new System.Drawing.Point(321, 460);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1096, 287);
             this.panel1.TabIndex = 4;
@@ -170,22 +170,24 @@ namespace Library
             // btn_update
             // 
             this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(881, 134);
+            this.btn_update.Location = new System.Drawing.Point(875, 139);
             this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(112, 35);
+            this.btn_update.Size = new System.Drawing.Size(154, 64);
             this.btn_update.TabIndex = 7;
             this.btn_update.Text = "Update";
             this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_select_image
             // 
             this.btn_select_image.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_select_image.Location = new System.Drawing.Point(881, 40);
+            this.btn_select_image.Location = new System.Drawing.Point(875, 45);
             this.btn_select_image.Name = "btn_select_image";
-            this.btn_select_image.Size = new System.Drawing.Size(112, 35);
+            this.btn_select_image.Size = new System.Drawing.Size(154, 64);
             this.btn_select_image.TabIndex = 6;
             this.btn_select_image.Text = "Select Image";
             this.btn_select_image.UseVisualStyleBackColor = true;
+            this.btn_select_image.Click += new System.EventHandler(this.btn_select_image_Click);
             // 
             // tb_email
             // 

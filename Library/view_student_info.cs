@@ -15,6 +15,9 @@ namespace Library
     public partial class view_student_info : Form
     {
         SqlConnection sql_con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=library_management;Integrated Security=True;Pooling=False");
+        string pwd;
+        string wanted_path;
+        DialogResult result;
         public view_student_info()
         {
             InitializeComponent();
@@ -27,14 +30,21 @@ namespace Library
 
         private void view_student_info_Load(object sender, EventArgs e)
         {
-            int i = 0;
-
+            
             if (sql_con.State==ConnectionState.Open)
             {
                 sql_con.Close();
             }
             sql_con.Open();
 
+            fill_grid();
+        }
+
+        public void fill_grid()
+        {
+            dgv_student.Columns.Clear();
+            dgv_student.Refresh();
+            int i = 0;
             SqlCommand cmd = sql_con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT * FROM student_info";
@@ -143,6 +153,59 @@ namespace Library
                 tb_semester.Text = dr["student_sem"].ToString();
                 tb_contact.Text = dr["student_contact"].ToString();
                 tb_email.Text = dr["student_email"].ToString();
+            }
+        }
+
+        private void btn_select_image_Click(object sender, EventArgs e)
+        {
+            pwd = Class1.GetRandomPassword(20);
+            wanted_path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+            result = ofd_select_new_image.ShowDialog();
+            // for some reason this doesn't work - it actually works NOW.
+            // refer to https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.filedialog.filter?view=net-5.0
+            ofd_select_new_image.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*jpg|GIF Files (*.gif)|*.gif";
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            if (result == DialogResult.OK) // Test result
+            {
+                int i;
+                i = Convert.ToInt32(dgv_student.SelectedCells[0].Value.ToString());
+                string img_path;
+                File.Copy(ofd_select_new_image.FileName, wanted_path + "\\student_images\\" + pwd + ".jpg");
+
+                img_path = "student_images\\" + pwd + ".jpg";
+
+                SqlCommand cmd = sql_con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "UPDATE student_info SET student_name='" + tb_name.Text + "', " +
+                    "student_image='" + img_path.ToString() + "'," +
+                    "student_enrolment_no='" + tb_enrolment_no.Text + "', " +
+                    "student_department='" + tb_department.Text + "', " +
+                    "student_sem='" + tb_semester.Text + "', " +
+                    "student_contact='" + tb_contact.Text + "', " +
+                    "student_email='" + tb_email.Text + "'WHERE id=" + i + "";
+                cmd.ExecuteNonQuery();
+                fill_grid();
+                MessageBox.Show("Record Updated Successfully!");
+            }
+            // need to first cancel adding image in order to change other stuff.
+            else if(result==DialogResult.Cancel)
+            {
+                int i;
+                i = Convert.ToInt32(dgv_student.SelectedCells[0].Value.ToString());
+                SqlCommand cmd = sql_con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "UPDATE student_info SET student_name='" + tb_name.Text + "', " +
+                    "student_enrolment_no='" + tb_enrolment_no.Text + "', " +
+                    "student_department='" + tb_department.Text + "', " +
+                    "student_sem='" + tb_semester.Text + "', " +
+                    "student_contact='" + tb_contact.Text + "', " +
+                    "student_email='" + tb_email.Text + "'WHERE id=" + i + "";
+                cmd.ExecuteNonQuery();
+                fill_grid();
+                MessageBox.Show("Record Updated Successfully!");
             }
         }
     }
