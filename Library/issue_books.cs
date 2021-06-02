@@ -116,20 +116,46 @@ namespace Library
 
         private void btn_issue_books_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = sql_con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO issue_books(student_enrolment_number, student_name, student_department, student_semester, student_contact, student_email, books_name, books_issue_date) " +
-                "VALUES('"+ tb_search.Text+"'," +
-                "'"+ tb_name.Text+"'," +
-                "'"+ tb_department.Text+"'," +
-                "'"+ tb_semester.Text+"'," +
-                "'"+ tb_contact.Text+"'," +
-                "'"+ tb_email.Text+"'," +
-                "'"+ tb_book_name.Text+"'," +
-                "'"+ dtp_book_issue_date.Text+"')";
-            cmd.ExecuteNonQuery();
+            int books_quantity=0;
+            SqlCommand cmd2 = sql_con.CreateCommand();
+            cmd2.CommandType = CommandType.Text;
+            cmd2.CommandText = "SELECT * FROM books_info WHERE books_name='"+tb_book_name.Text+"'";
+            cmd2.ExecuteNonQuery();
+            DataTable dt2 = new DataTable();
+            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+            da2.Fill(dt2);
+            foreach (DataRow dr2 in dt2.Rows)
+            {
+                books_quantity = Convert.ToInt32(dr2["available_quantity"].ToString());
+            }
 
-            MessageBox.Show("Books Issues Successfully!");
+            if(books_quantity > 0)
+            {
+                SqlCommand cmd = sql_con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "INSERT INTO issue_books(student_enrolment_number, student_name, student_department, student_semester, student_contact, student_email, books_name, books_issue_date) " +
+                    "VALUES('" + tb_search.Text + "'," +
+                    "'" + tb_name.Text + "'," +
+                    "'" + tb_department.Text + "'," +
+                    "'" + tb_semester.Text + "'," +
+                    "'" + tb_contact.Text + "'," +
+                    "'" + tb_email.Text + "'," +
+                    "'" + tb_book_name.Text + "'," +
+                    "'" + dtp_book_issue_date.Text + "')";
+                cmd.ExecuteNonQuery();
+
+                SqlCommand cmd1 = sql_con.CreateCommand();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.CommandText = "UPDATE books_info SET available_quantity=available_quantity-1 WHERE books_name='" + tb_book_name.Text + "'";
+                cmd1.ExecuteNonQuery();
+
+                MessageBox.Show("Books Issues Successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Books Not Available!");
+            }
+            
         }
     }
 }

@@ -231,7 +231,7 @@ namespace Library
             // 
             // btn_issue_books
             // 
-            this.btn_issue_books.Location = new System.Drawing.Point(44, 377);
+            this.btn_issue_books.Location = new System.Drawing.Point(528, 595);
             this.btn_issue_books.Name = "btn_issue_books";
             this.btn_issue_books.Size = new System.Drawing.Size(147, 73);
             this.btn_issue_books.TabIndex = 17;

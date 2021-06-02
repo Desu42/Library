@@ -28,8 +28,14 @@ namespace Library
             //int book_price = Convert.ToInt32(tb_price.Text.ToString());
             //int book_quantity = Convert.ToInt32(tb_quantity.Text.ToString());
 
-            sql_cmd.CommandText = "INSERT INTO books_info(books_name, books_author_name, books_publication_name, books_purchase_date, books_price, books_quantity) " +
-                "VALUES ('"+tb_book.Text+"','"+tb_author.Text+"','"+tb_publication.Text+"','"+dtp_purchase.Text+"',"+ tb_price.Text + ","+ tb_quantity.Text + ")";
+            sql_cmd.CommandText = "INSERT INTO books_info(books_name, books_author_name, books_publication_name, books_purchase_date, books_price, books_quantity, available_quantity) " +
+                "VALUES ('"+tb_book.Text+"'," +
+                "'"+tb_author.Text+"'," +
+                "'"+tb_publication.Text+"'," +
+                "'"+dtp_purchase.Text+"'," +
+                ""+ tb_price.Text + "," +
+                ""+ tb_quantity.Text + "," +
+                ""+ tb_quantity.Text + ")";
             sql_cmd.ExecuteNonQuery();
             sql_con.Close();
 
