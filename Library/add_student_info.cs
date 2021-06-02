@@ -28,16 +28,16 @@ namespace Library
         {
             pwd = Class1.GetRandomPassword(20);
             wanted_path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-            DialogResult result = openFileDialog1.ShowDialog();
-            // for some reason this doesn't work
+            DialogResult result = opf_add_student.ShowDialog();
+            // for some reason this doesn't work - it actually works NOW.
             // refer to https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.filedialog.filter?view=net-5.0
-            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*jpg|GIF Files (*.gif)|*.gif";
+            opf_add_student.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*jpg|GIF Files (*.gif)|*.gif";
             if(result == DialogResult.OK) // Test result
             {
-                pb_student.ImageLocation = openFileDialog1.FileName;
+                pb_student.ImageLocation = opf_add_student.FileName;
                 pb_student.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-            //pictureBox1.ImageLocation = @"..\..\student_images\" + pwd + ".jpg";
+            //pb_student.ImageLocation = @"..\..\student_images\" + pwd + ".jpg";
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace Library
             try
             {
                 string img_path;
-                File.Copy(openFileDialog1.FileName, wanted_path + "\\student_images\\" + pwd + ".jpg");
+                File.Copy(opf_add_student.FileName, wanted_path + "\\student_images\\" + pwd + ".jpg");
 
                 img_path = "student_images\\" + pwd + ".jpg";
 

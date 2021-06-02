@@ -30,23 +30,23 @@ namespace Library
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_name = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_department = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl_phone = new System.Windows.Forms.Label();
-            this.lbl_email = new System.Windows.Forms.Label();
-            this.tb_name = new System.Windows.Forms.TextBox();
-            this.btn_add_photo = new System.Windows.Forms.Button();
-            this.tb_enrolment_number = new System.Windows.Forms.TextBox();
-            this.tb_department = new System.Windows.Forms.TextBox();
-            this.tb_sem = new System.Windows.Forms.TextBox();
-            this.tb_contact = new System.Windows.Forms.TextBox();
-            this.tb_email = new System.Windows.Forms.TextBox();
-            this.btn_add = new System.Windows.Forms.Button();
             this.pb_student = new System.Windows.Forms.PictureBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.tb_email = new System.Windows.Forms.TextBox();
+            this.tb_contact = new System.Windows.Forms.TextBox();
+            this.tb_sem = new System.Windows.Forms.TextBox();
+            this.tb_department = new System.Windows.Forms.TextBox();
+            this.tb_enrolment_number = new System.Windows.Forms.TextBox();
+            this.btn_add_photo = new System.Windows.Forms.Button();
+            this.tb_name = new System.Windows.Forms.TextBox();
+            this.lbl_email = new System.Windows.Forms.Label();
+            this.lbl_phone = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_department = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_name = new System.Windows.Forms.Label();
+            this.opf_add_student = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_student)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +74,144 @@ namespace Library
             this.panel1.Size = new System.Drawing.Size(1107, 482);
             this.panel1.TabIndex = 0;
             // 
+            // pb_student
+            // 
+            this.pb_student.Location = new System.Drawing.Point(769, 195);
+            this.pb_student.Name = "pb_student";
+            this.pb_student.Size = new System.Drawing.Size(298, 258);
+            this.pb_student.TabIndex = 15;
+            this.pb_student.TabStop = false;
+            // 
+            // btn_add
+            // 
+            this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.Location = new System.Drawing.Point(450, 382);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(197, 49);
+            this.btn_add.TabIndex = 14;
+            this.btn_add.Text = "Add Student";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
+            // tb_email
+            // 
+            this.tb_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_email.Location = new System.Drawing.Point(530, 126);
+            this.tb_email.Name = "tb_email";
+            this.tb_email.Size = new System.Drawing.Size(155, 30);
+            this.tb_email.TabIndex = 13;
+            // 
+            // tb_contact
+            // 
+            this.tb_contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_contact.Location = new System.Drawing.Point(180, 190);
+            this.tb_contact.Name = "tb_contact";
+            this.tb_contact.Size = new System.Drawing.Size(155, 30);
+            this.tb_contact.TabIndex = 12;
+            // 
+            // tb_sem
+            // 
+            this.tb_sem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_sem.Location = new System.Drawing.Point(180, 121);
+            this.tb_sem.Name = "tb_sem";
+            this.tb_sem.Size = new System.Drawing.Size(155, 30);
+            this.tb_sem.TabIndex = 11;
+            // 
+            // tb_department
+            // 
+            this.tb_department.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_department.Location = new System.Drawing.Point(530, 47);
+            this.tb_department.Name = "tb_department";
+            this.tb_department.Size = new System.Drawing.Size(155, 30);
+            this.tb_department.TabIndex = 10;
+            // 
+            // tb_enrolment_number
+            // 
+            this.tb_enrolment_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_enrolment_number.Location = new System.Drawing.Point(912, 45);
+            this.tb_enrolment_number.Name = "tb_enrolment_number";
+            this.tb_enrolment_number.Size = new System.Drawing.Size(155, 30);
+            this.tb_enrolment_number.TabIndex = 9;
+            // 
+            // btn_add_photo
+            // 
+            this.btn_add_photo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_photo.Location = new System.Drawing.Point(912, 121);
+            this.btn_add_photo.Name = "btn_add_photo";
+            this.btn_add_photo.Size = new System.Drawing.Size(155, 35);
+            this.btn_add_photo.TabIndex = 8;
+            this.btn_add_photo.Text = "Add Photo";
+            this.btn_add_photo.UseVisualStyleBackColor = true;
+            this.btn_add_photo.Click += new System.EventHandler(this.btn_add_photo_Click);
+            // 
+            // tb_name
+            // 
+            this.tb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_name.Location = new System.Drawing.Point(180, 48);
+            this.tb_name.Name = "tb_name";
+            this.tb_name.Size = new System.Drawing.Size(155, 30);
+            this.tb_name.TabIndex = 7;
+            // 
+            // lbl_email
+            // 
+            this.lbl_email.AutoSize = true;
+            this.lbl_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email.Location = new System.Drawing.Point(372, 126);
+            this.lbl_email.Name = "lbl_email";
+            this.lbl_email.Size = new System.Drawing.Size(65, 25);
+            this.lbl_email.TabIndex = 6;
+            this.lbl_email.Text = "Email";
+            // 
+            // lbl_phone
+            // 
+            this.lbl_phone.AutoSize = true;
+            this.lbl_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_phone.Location = new System.Drawing.Point(36, 195);
+            this.lbl_phone.Name = "lbl_phone";
+            this.lbl_phone.Size = new System.Drawing.Size(113, 25);
+            this.lbl_phone.TabIndex = 5;
+            this.lbl_phone.Text = "Phone No.";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(36, 129);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Semester";
+            // 
+            // lbl_department
+            // 
+            this.lbl_department.AutoSize = true;
+            this.lbl_department.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_department.Location = new System.Drawing.Point(372, 53);
+            this.lbl_department.Name = "lbl_department";
+            this.lbl_department.Size = new System.Drawing.Size(123, 25);
+            this.lbl_department.TabIndex = 3;
+            this.lbl_department.Text = "Department";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(764, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Student No.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(764, 126);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Photo";
+            // 
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
@@ -84,147 +222,9 @@ namespace Library
             this.lbl_name.TabIndex = 0;
             this.lbl_name.Text = "Name";
             // 
-            // label2
+            // opf_add_student
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(362, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Photo";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(764, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 25);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Student No.";
-            // 
-            // lbl_department
-            // 
-            this.lbl_department.AutoSize = true;
-            this.lbl_department.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_department.Location = new System.Drawing.Point(36, 131);
-            this.lbl_department.Name = "lbl_department";
-            this.lbl_department.Size = new System.Drawing.Size(123, 25);
-            this.lbl_department.TabIndex = 3;
-            this.lbl_department.Text = "Department";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(362, 132);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Semester";
-            // 
-            // lbl_phone
-            // 
-            this.lbl_phone.AutoSize = true;
-            this.lbl_phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_phone.Location = new System.Drawing.Point(764, 128);
-            this.lbl_phone.Name = "lbl_phone";
-            this.lbl_phone.Size = new System.Drawing.Size(113, 25);
-            this.lbl_phone.TabIndex = 5;
-            this.lbl_phone.Text = "Phone No.";
-            // 
-            // lbl_email
-            // 
-            this.lbl_email.AutoSize = true;
-            this.lbl_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_email.Location = new System.Drawing.Point(39, 200);
-            this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(65, 25);
-            this.lbl_email.TabIndex = 6;
-            this.lbl_email.Text = "Email";
-            // 
-            // tb_name
-            // 
-            this.tb_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_name.Location = new System.Drawing.Point(180, 48);
-            this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(155, 30);
-            this.tb_name.TabIndex = 7;
-            // 
-            // btn_add_photo
-            // 
-            this.btn_add_photo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_photo.Location = new System.Drawing.Point(510, 43);
-            this.btn_add_photo.Name = "btn_add_photo";
-            this.btn_add_photo.Size = new System.Drawing.Size(155, 35);
-            this.btn_add_photo.TabIndex = 8;
-            this.btn_add_photo.Text = "Add Photo";
-            this.btn_add_photo.UseVisualStyleBackColor = true;
-            this.btn_add_photo.Click += new System.EventHandler(this.btn_add_photo_Click);
-            // 
-            // tb_enrolment_number
-            // 
-            this.tb_enrolment_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_enrolment_number.Location = new System.Drawing.Point(912, 43);
-            this.tb_enrolment_number.Name = "tb_enrolment_number";
-            this.tb_enrolment_number.Size = new System.Drawing.Size(155, 30);
-            this.tb_enrolment_number.TabIndex = 9;
-            // 
-            // tb_department
-            // 
-            this.tb_department.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_department.Location = new System.Drawing.Point(180, 129);
-            this.tb_department.Name = "tb_department";
-            this.tb_department.Size = new System.Drawing.Size(155, 30);
-            this.tb_department.TabIndex = 10;
-            // 
-            // tb_sem
-            // 
-            this.tb_sem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_sem.Location = new System.Drawing.Point(510, 127);
-            this.tb_sem.Name = "tb_sem";
-            this.tb_sem.Size = new System.Drawing.Size(155, 30);
-            this.tb_sem.TabIndex = 11;
-            // 
-            // tb_contact
-            // 
-            this.tb_contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_contact.Location = new System.Drawing.Point(912, 123);
-            this.tb_contact.Name = "tb_contact";
-            this.tb_contact.Size = new System.Drawing.Size(155, 30);
-            this.tb_contact.TabIndex = 12;
-            // 
-            // tb_email
-            // 
-            this.tb_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_email.Location = new System.Drawing.Point(180, 195);
-            this.tb_email.Name = "tb_email";
-            this.tb_email.Size = new System.Drawing.Size(155, 30);
-            this.tb_email.TabIndex = 13;
-            // 
-            // btn_add
-            // 
-            this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(367, 366);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(197, 49);
-            this.btn_add.TabIndex = 14;
-            this.btn_add.Text = "Add Student";
-            this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
-            // pb_student
-            // 
-            this.pb_student.Location = new System.Drawing.Point(653, 200);
-            this.pb_student.Name = "pb_student";
-            this.pb_student.Size = new System.Drawing.Size(286, 257);
-            this.pb_student.TabIndex = 15;
-            this.pb_student.TabStop = false;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.opf_add_student.FileName = "openFileDialog1";
             // 
             // add_student_info
             // 
@@ -260,6 +260,6 @@ namespace Library
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.PictureBox pb_student;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog opf_add_student;
     }
 }
