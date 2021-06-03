@@ -141,5 +141,11 @@ namespace Library
             return_books rb = new return_books();
             rb.Show();
         }
+
+        private void bookStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            books_stock bs = new books_stock();
+            bs.Show();
+        }
     }
 }

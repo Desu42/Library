@@ -42,6 +42,7 @@ namespace Library
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.returnBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +65,8 @@ namespace Library
             this.addNewBooksToolStripMenuItem,
             this.viewBooksToolStripMenuItem,
             this.issueBooksToolStripMenuItem,
-            this.returnBooksToolStripMenuItem});
+            this.returnBooksToolStripMenuItem,
+            this.bookStockToolStripMenuItem});
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
             this.booksToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.booksToolStripMenuItem.Text = "Books";
@@ -138,6 +140,13 @@ namespace Library
             this.returnBooksToolStripMenuItem.Text = "Return Books";
             this.returnBooksToolStripMenuItem.Click += new System.EventHandler(this.returnBooksToolStripMenuItem_Click);
             // 
+            // bookStockToolStripMenuItem
+            // 
+            this.bookStockToolStripMenuItem.Name = "bookStockToolStripMenuItem";
+            this.bookStockToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bookStockToolStripMenuItem.Text = "Book Stock";
+            this.bookStockToolStripMenuItem.Click += new System.EventHandler(this.bookStockToolStripMenuItem_Click);
+            // 
             // mdi_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,6 +182,7 @@ namespace Library
         private System.Windows.Forms.ToolStripMenuItem viewStudentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem issueBooksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnBooksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bookStockToolStripMenuItem;
     }
 }
 

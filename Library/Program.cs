@@ -22,6 +22,7 @@ namespace Library
             //Application.Run(new view_student_info());
             //Application.Run(new issue_books());
             //Application.Run(new return_books());
+            //Application.Run(new books_stock());
         }
     }
 }
