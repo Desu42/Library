@@ -34,13 +34,14 @@ namespace Library
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.issueBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.issueBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,8 @@ namespace Library
             this.booksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewBooksToolStripMenuItem,
             this.viewBooksToolStripMenuItem,
-            this.issueBooksToolStripMenuItem});
+            this.issueBooksToolStripMenuItem,
+            this.returnBooksToolStripMenuItem});
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
             this.booksToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.booksToolStripMenuItem.Text = "Books";
@@ -80,6 +82,13 @@ namespace Library
             this.viewBooksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewBooksToolStripMenuItem.Text = "View Books";
             this.viewBooksToolStripMenuItem.Click += new System.EventHandler(this.viewBooksToolStripMenuItem_Click);
+            // 
+            // issueBooksToolStripMenuItem
+            // 
+            this.issueBooksToolStripMenuItem.Name = "issueBooksToolStripMenuItem";
+            this.issueBooksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.issueBooksToolStripMenuItem.Text = "Issue Books";
+            this.issueBooksToolStripMenuItem.Click += new System.EventHandler(this.issueBooksToolStripMenuItem_Click);
             // 
             // studentToolStripMenuItem
             // 
@@ -122,12 +131,12 @@ namespace Library
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // issueBooksToolStripMenuItem
+            // returnBooksToolStripMenuItem
             // 
-            this.issueBooksToolStripMenuItem.Name = "issueBooksToolStripMenuItem";
-            this.issueBooksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.issueBooksToolStripMenuItem.Text = "Issue Books";
-            this.issueBooksToolStripMenuItem.Click += new System.EventHandler(this.issueBooksToolStripMenuItem_Click);
+            this.returnBooksToolStripMenuItem.Name = "returnBooksToolStripMenuItem";
+            this.returnBooksToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.returnBooksToolStripMenuItem.Text = "Return Books";
+            this.returnBooksToolStripMenuItem.Click += new System.EventHandler(this.returnBooksToolStripMenuItem_Click);
             // 
             // mdi_user
             // 
@@ -163,6 +172,7 @@ namespace Library
         private System.Windows.Forms.ToolStripMenuItem addStudentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewStudentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem issueBooksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem returnBooksToolStripMenuItem;
     }
 }
 

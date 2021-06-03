@@ -133,7 +133,7 @@ namespace Library
             {
                 SqlCommand cmd = sql_con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "INSERT INTO issue_books(student_enrolment_number, student_name, student_department, student_semester, student_contact, student_email, books_name, books_issue_date) " +
+                cmd.CommandText = "INSERT INTO issue_books(student_enrolment_number, student_name, student_department, student_semester, student_contact, student_email, books_name, books_issue_date, book_return_date) " +
                     "VALUES('" + tb_search.Text + "'," +
                     "'" + tb_name.Text + "'," +
                     "'" + tb_department.Text + "'," +
@@ -141,7 +141,8 @@ namespace Library
                     "'" + tb_contact.Text + "'," +
                     "'" + tb_email.Text + "'," +
                     "'" + tb_book_name.Text + "'," +
-                    "'" + dtp_book_issue_date.Text + "')";
+                    "'" + dtp_book_issue_date.Text + "'," +
+                    "'')";
                 cmd.ExecuteNonQuery();
 
                 SqlCommand cmd1 = sql_con.CreateCommand();
@@ -149,7 +150,7 @@ namespace Library
                 cmd1.CommandText = "UPDATE books_info SET available_quantity=available_quantity-1 WHERE books_name='" + tb_book_name.Text + "'";
                 cmd1.ExecuteNonQuery();
 
-                MessageBox.Show("Books Issues Successfully!");
+                MessageBox.Show("Books Issued Successfully!");
             }
             else
             {
