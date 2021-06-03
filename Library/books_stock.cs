@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net.Mail;
+using System.Net;
 
 namespace Library
 {
@@ -67,6 +69,32 @@ namespace Library
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dgv_show_books.DataSource = dt;
+        }
+
+        private void dgv_book_details_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string student_mail_temp;
+            student_mail_temp = dgv_book_details.SelectedCells[6].Value.ToString();
+            if (student_mail_temp!=string.Empty)
+            {
+                panel_send_email.Visible = true;
+            }
+
+            tb_email.Text = student_mail_temp.ToString();
+        }
+
+        private void btn_send_email_Click(object sender, EventArgs e)
+        {
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            // (username.password)
+            smtp.Credentials = new NetworkCredential("django.agenda@gmail.com", "%A3*@8pTbGaz2duCJL%dW5FQBfhemsT4");
+            //(from, to, subject, body)
+            MailMessage mail = new MailMessage("django.agenda@gmail.com", tb_email.Text, "Return book asap.", tb_content.Text);
+            mail.Priority = MailPriority.High;
+            smtp.Send(mail);
+            MessageBox.Show("Email sent.");
         }
     }
 }
