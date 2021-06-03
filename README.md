@@ -8,10 +8,10 @@ C# Library Management
 - add student details - DONE
 - edit books details - DONE
 - delete books details
-- issue books to student 
-- return books from student and ass in available stock
-- search books
-- search student
+- issue books to student - DONE
+- return books from student and add in available stock - DONE
+- search books - DONE
+- search student - DONE
 - see how many students have loaned books
 - send sms/email to student to return their books
 - find books by publication name/ author name
