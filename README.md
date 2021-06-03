@@ -12,8 +12,7 @@ C# Library Management
 - return books from student and add in available stock - DONE
 - search books - DONE
 - search student - DONE
-- see how many students have loaned books
-- send sms/email to student to return their books
-- find books by publication name/ author name
-- generate crystal report of books/ publications to be able to print them
-- logout
+- see how many students have loaned books - DONE
+- send sms/email to student to return their books - DONE
+- find books by publication name/ author name - DONE
+
