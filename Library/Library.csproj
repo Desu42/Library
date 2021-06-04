@@ -58,6 +58,7 @@
     <Compile Include="add_student_info.Designer.cs">
       <DependentUpon>add_student_info.cs</DependentUpon>
     </Compile>
+    <Compile Include="Book.cs" />
     <Compile Include="books_stock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +160,7 @@
     <Content Include="images\lock.png" />
     <Content Include="images\login_1.png" />
     <Content Include="images\login_2.png" />
+    <Content Include="images\mdi_background.jpg" />
     <Content Include="images\User-Interface-Login.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

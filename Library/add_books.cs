@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -25,28 +19,83 @@ namespace Library
             SqlCommand sql_cmd = sql_con.CreateCommand();
             sql_cmd.CommandType = CommandType.Text;
 
-            //int book_price = Convert.ToInt32(tb_price.Text.ToString());
-            //int book_quantity = Convert.ToInt32(tb_quantity.Text.ToString());
+            if (validate_data())
+            {
+                Book temporary_book = new Book(tb_book.Text, tb_author.Text, tb_publication.Text, dtp_purchase.Text, Convert.ToInt32(tb_price.Text), Convert.ToInt32(tb_quantity.Text));
 
-            sql_cmd.CommandText = "INSERT INTO books_info(books_name, books_author_name, books_publication_name, books_purchase_date, books_price, books_quantity, available_quantity) " +
-                "VALUES ('"+tb_book.Text+"'," +
-                "'"+tb_author.Text+"'," +
-                "'"+tb_publication.Text+"'," +
-                "'"+dtp_purchase.Text+"'," +
-                ""+ tb_price.Text + "," +
-                ""+ tb_quantity.Text + "," +
-                ""+ tb_quantity.Text + ")";
-            sql_cmd.ExecuteNonQuery();
-            sql_con.Close();
+                sql_cmd.CommandText = "INSERT INTO books_info(books_name, books_author_name, books_publication_name, books_purchase_date, books_price, books_quantity, available_quantity) " +
+                                      "VALUES ('" + temporary_book.Title + "'," +
+                                      "'" + temporary_book.Author + "'," +
+                                      "'" + temporary_book.Publication + "'," +
+                                      "'" + temporary_book.Purchase_Date + "'," +
+                                      "" + temporary_book.Price + "," +
+                                      "" + temporary_book.Quantity + "," +
+                                      "" + temporary_book.Available_Quantity + ")";
+                sql_cmd.ExecuteNonQuery();
+                sql_con.Close();
 
-            tb_book.Text = "";
-            tb_author.Text = "";
-            tb_publication.Text = "";
-            // dtp_purchase
-            tb_price.Text = "";
-            tb_quantity.Text = "";
+                tb_book.Text = "";
+                tb_author.Text = "";
+                tb_publication.Text = "";
+                dtp_purchase.Value = DateTime.Now;
+                tb_price.Text = "";
+                tb_quantity.Text = "";
 
-            MessageBox.Show("Books Added Successfully.");
+                MessageBox.Show("Books Added Successfully.");
+            }
+            else
+            {
+                sql_con.Close();
+                MessageBox.Show("Fail.");
+            }
+
+        }
+        bool validate_data()
+        {
+            int book_price;
+            bool book_price_success = Int32.TryParse(tb_price.Text.ToString(), out book_price);
+
+            int book_quantity;
+            bool book_quantity_success = Int32.TryParse(tb_quantity.Text.ToString(), out book_quantity);
+
+            if (book_price_success && book_quantity_success)
+            {
+                if (book_quantity > Book.BOOK_MAX_QUANTITY)
+                {
+                    return false;
+                }
+
+                if(book_price > Book.BOOK_MAX_PRICE)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+            if(tb_book.Text==string.Empty)
+            {
+                return false;
+            }
+
+            if (tb_author.Text == string.Empty)
+            {
+                return false;
+            }
+
+            if (tb_publication.Text==string.Empty)
+            {
+                return false;
+            }
+
+            if (dtp_purchase.Value.Date > DateTime.Today)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

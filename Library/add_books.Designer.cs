@@ -176,6 +176,9 @@ namespace Library
             this.Controls.Add(this.tb_publication);
             this.Controls.Add(this.tb_author);
             this.Controls.Add(this.tb_book);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "add_books";
             this.Text = "add_books";
             this.ResumeLayout(false);

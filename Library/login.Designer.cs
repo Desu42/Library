@@ -31,13 +31,13 @@ namespace Library
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_login_title = new System.Windows.Forms.Label();
-            this.lbl_user = new System.Windows.Forms.Label();
-            this.tb_user = new System.Windows.Forms.TextBox();
-            this.lbl_pass = new System.Windows.Forms.Label();
-            this.tb_pass = new System.Windows.Forms.TextBox();
-            this.btn_login = new System.Windows.Forms.Button();
             this.pbUser = new System.Windows.Forms.PictureBox();
+            this.btn_login = new System.Windows.Forms.Button();
+            this.tb_pass = new System.Windows.Forms.TextBox();
+            this.lbl_pass = new System.Windows.Forms.Label();
+            this.tb_user = new System.Windows.Forms.TextBox();
+            this.lbl_user = new System.Windows.Forms.Label();
+            this.lbl_login_title = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
@@ -56,50 +56,15 @@ namespace Library
             this.panel1.Size = new System.Drawing.Size(826, 515);
             this.panel1.TabIndex = 0;
             // 
-            // lbl_login_title
+            // pbUser
             // 
-            this.lbl_login_title.AutoSize = true;
-            this.lbl_login_title.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_login_title.Location = new System.Drawing.Point(251, 22);
-            this.lbl_login_title.Name = "lbl_login_title";
-            this.lbl_login_title.Size = new System.Drawing.Size(340, 72);
-            this.lbl_login_title.TabIndex = 5;
-            this.lbl_login_title.Text = "WELCOME";
-            // 
-            // lbl_user
-            // 
-            this.lbl_user.AutoSize = true;
-            this.lbl_user.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_user.Location = new System.Drawing.Point(341, 190);
-            this.lbl_user.Name = "lbl_user";
-            this.lbl_user.Size = new System.Drawing.Size(174, 34);
-            this.lbl_user.TabIndex = 6;
-            this.lbl_user.Text = "USERNAME";
-            // 
-            // tb_user
-            // 
-            this.tb_user.Location = new System.Drawing.Point(546, 201);
-            this.tb_user.Name = "tb_user";
-            this.tb_user.Size = new System.Drawing.Size(234, 22);
-            this.tb_user.TabIndex = 7;
-            // 
-            // lbl_pass
-            // 
-            this.lbl_pass.AutoSize = true;
-            this.lbl_pass.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pass.Location = new System.Drawing.Point(341, 306);
-            this.lbl_pass.Name = "lbl_pass";
-            this.lbl_pass.Size = new System.Drawing.Size(180, 34);
-            this.lbl_pass.TabIndex = 8;
-            this.lbl_pass.Text = "PASSWORD";
-            // 
-            // tb_pass
-            // 
-            this.tb_pass.Location = new System.Drawing.Point(546, 318);
-            this.tb_pass.Name = "tb_pass";
-            this.tb_pass.PasswordChar = '*';
-            this.tb_pass.Size = new System.Drawing.Size(234, 22);
-            this.tb_pass.TabIndex = 9;
+            this.pbUser.Image = ((System.Drawing.Image)(resources.GetObject("pbUser.Image")));
+            this.pbUser.Location = new System.Drawing.Point(31, 157);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(225, 225);
+            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbUser.TabIndex = 11;
+            this.pbUser.TabStop = false;
             // 
             // btn_login
             // 
@@ -114,15 +79,52 @@ namespace Library
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
-            // pbUser
+            // tb_pass
             // 
-            this.pbUser.Image = ((System.Drawing.Image)(resources.GetObject("pbUser.Image")));
-            this.pbUser.Location = new System.Drawing.Point(31, 157);
-            this.pbUser.Name = "pbUser";
-            this.pbUser.Size = new System.Drawing.Size(225, 225);
-            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbUser.TabIndex = 11;
-            this.pbUser.TabStop = false;
+            this.tb_pass.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_pass.Location = new System.Drawing.Point(545, 317);
+            this.tb_pass.Name = "tb_pass";
+            this.tb_pass.PasswordChar = '*';
+            this.tb_pass.Size = new System.Drawing.Size(234, 40);
+            this.tb_pass.TabIndex = 9;
+            // 
+            // lbl_pass
+            // 
+            this.lbl_pass.AutoSize = true;
+            this.lbl_pass.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pass.Location = new System.Drawing.Point(341, 323);
+            this.lbl_pass.Name = "lbl_pass";
+            this.lbl_pass.Size = new System.Drawing.Size(180, 34);
+            this.lbl_pass.TabIndex = 8;
+            this.lbl_pass.Text = "PASSWORD";
+            // 
+            // tb_user
+            // 
+            this.tb_user.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_user.Location = new System.Drawing.Point(545, 201);
+            this.tb_user.Name = "tb_user";
+            this.tb_user.Size = new System.Drawing.Size(234, 40);
+            this.tb_user.TabIndex = 7;
+            // 
+            // lbl_user
+            // 
+            this.lbl_user.AutoSize = true;
+            this.lbl_user.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_user.Location = new System.Drawing.Point(341, 207);
+            this.lbl_user.Name = "lbl_user";
+            this.lbl_user.Size = new System.Drawing.Size(174, 34);
+            this.lbl_user.TabIndex = 6;
+            this.lbl_user.Text = "USERNAME";
+            // 
+            // lbl_login_title
+            // 
+            this.lbl_login_title.AutoSize = true;
+            this.lbl_login_title.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_login_title.Location = new System.Drawing.Point(251, 22);
+            this.lbl_login_title.Name = "lbl_login_title";
+            this.lbl_login_title.Size = new System.Drawing.Size(340, 72);
+            this.lbl_login_title.TabIndex = 5;
+            this.lbl_login_title.Text = "WELCOME";
             // 
             // login
             // 
