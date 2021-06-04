@@ -11,6 +11,10 @@ using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
 
+// add for how long a book has been lent to someone. And if the period is longer than a given period, automatically send them and email
+// informing them to bring the book back, otherwise they incur penalties
+// add markdown support/ use html to format/ or have an email template ready
+
 namespace Library
 {
     public partial class books_stock : Form

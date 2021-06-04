@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+// add delete books button
+// change default colors and fonts and such. This applicaiton is very ugly. 
 namespace Library
 {
     public partial class view_books : Form

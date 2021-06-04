@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+// make sure can't issue same book multiple times to same student
+// add limit of 3 books per student at a given time
+// can't issue books on a future date
+// book names are usually quite long. Use a multiline textbox?
 
 namespace Library
 {

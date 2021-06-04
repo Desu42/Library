@@ -34,12 +34,12 @@ namespace Library
             this.tb_search = new System.Windows.Forms.TextBox();
             this.lbl_search_book = new System.Windows.Forms.Label();
             this.panel_send_email = new System.Windows.Forms.Panel();
-            this.tb_email = new System.Windows.Forms.TextBox();
-            this.tb_content = new System.Windows.Forms.TextBox();
-            this.btn_send_email = new System.Windows.Forms.Button();
-            this.lbl_email = new System.Windows.Forms.Label();
-            this.lbl_content = new System.Windows.Forms.Label();
             this.lbl_send_email_description = new System.Windows.Forms.Label();
+            this.lbl_content = new System.Windows.Forms.Label();
+            this.lbl_email = new System.Windows.Forms.Label();
+            this.btn_send_email = new System.Windows.Forms.Button();
+            this.tb_content = new System.Windows.Forms.TextBox();
+            this.tb_email = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_show_books)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_book_details)).BeginInit();
             this.panel_send_email.SuspendLayout();
@@ -103,20 +103,33 @@ namespace Library
             this.panel_send_email.TabIndex = 4;
             this.panel_send_email.Visible = false;
             // 
-            // tb_email
+            // lbl_send_email_description
             // 
-            this.tb_email.Location = new System.Drawing.Point(161, 96);
-            this.tb_email.Name = "tb_email";
-            this.tb_email.Size = new System.Drawing.Size(186, 30);
-            this.tb_email.TabIndex = 0;
+            this.lbl_send_email_description.AutoSize = true;
+            this.lbl_send_email_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_send_email_description.Location = new System.Drawing.Point(117, 22);
+            this.lbl_send_email_description.Name = "lbl_send_email_description";
+            this.lbl_send_email_description.Size = new System.Drawing.Size(296, 31);
+            this.lbl_send_email_description.TabIndex = 6;
+            this.lbl_send_email_description.Text = "Send email to student";
             // 
-            // tb_content
+            // lbl_content
             // 
-            this.tb_content.Location = new System.Drawing.Point(161, 160);
-            this.tb_content.Multiline = true;
-            this.tb_content.Name = "tb_content";
-            this.tb_content.Size = new System.Drawing.Size(369, 200);
-            this.tb_content.TabIndex = 1;
+            this.lbl_content.AutoSize = true;
+            this.lbl_content.Location = new System.Drawing.Point(23, 160);
+            this.lbl_content.Name = "lbl_content";
+            this.lbl_content.Size = new System.Drawing.Size(88, 25);
+            this.lbl_content.TabIndex = 4;
+            this.lbl_content.Text = "Content";
+            // 
+            // lbl_email
+            // 
+            this.lbl_email.AutoSize = true;
+            this.lbl_email.Location = new System.Drawing.Point(23, 101);
+            this.lbl_email.Name = "lbl_email";
+            this.lbl_email.Size = new System.Drawing.Size(65, 25);
+            this.lbl_email.TabIndex = 3;
+            this.lbl_email.Text = "Email";
             // 
             // btn_send_email
             // 
@@ -128,33 +141,20 @@ namespace Library
             this.btn_send_email.UseVisualStyleBackColor = true;
             this.btn_send_email.Click += new System.EventHandler(this.btn_send_email_Click);
             // 
-            // lbl_email
+            // tb_content
             // 
-            this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(23, 101);
-            this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(65, 25);
-            this.lbl_email.TabIndex = 3;
-            this.lbl_email.Text = "Email";
+            this.tb_content.Location = new System.Drawing.Point(161, 160);
+            this.tb_content.Multiline = true;
+            this.tb_content.Name = "tb_content";
+            this.tb_content.Size = new System.Drawing.Size(369, 200);
+            this.tb_content.TabIndex = 1;
             // 
-            // lbl_content
+            // tb_email
             // 
-            this.lbl_content.AutoSize = true;
-            this.lbl_content.Location = new System.Drawing.Point(23, 160);
-            this.lbl_content.Name = "lbl_content";
-            this.lbl_content.Size = new System.Drawing.Size(88, 25);
-            this.lbl_content.TabIndex = 4;
-            this.lbl_content.Text = "Content";
-            // 
-            // lbl_send_email_description
-            // 
-            this.lbl_send_email_description.AutoSize = true;
-            this.lbl_send_email_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_send_email_description.Location = new System.Drawing.Point(117, 22);
-            this.lbl_send_email_description.Name = "lbl_send_email_description";
-            this.lbl_send_email_description.Size = new System.Drawing.Size(296, 31);
-            this.lbl_send_email_description.TabIndex = 6;
-            this.lbl_send_email_description.Text = "Send email to student";
+            this.tb_email.Location = new System.Drawing.Point(161, 96);
+            this.tb_email.Name = "tb_email";
+            this.tb_email.Size = new System.Drawing.Size(369, 30);
+            this.tb_email.TabIndex = 0;
             // 
             // books_stock
             // 

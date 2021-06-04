@@ -30,19 +30,19 @@ namespace Library
         private void InitializeComponent()
         {
             this.panel_search = new System.Windows.Forms.Panel();
-            this.lbl_enrolment_number = new System.Windows.Forms.Label();
-            this.tb_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
+            this.tb_search = new System.Windows.Forms.TextBox();
+            this.lbl_enrolment_number = new System.Windows.Forms.Label();
             this.panel_show_book = new System.Windows.Forms.Panel();
             this.dgv_show_books = new System.Windows.Forms.DataGridView();
             this.panel_book_info = new System.Windows.Forms.Panel();
-            this.lbl_book_name = new System.Windows.Forms.Label();
-            this.lbl_show_book_name = new System.Windows.Forms.Label();
-            this.lbl_issue_date = new System.Windows.Forms.Label();
-            this.lbl_show_issue_date = new System.Windows.Forms.Label();
-            this.lbl_select_return_date = new System.Windows.Forms.Label();
-            this.dtp_return_date = new System.Windows.Forms.DateTimePicker();
             this.btn_return_book = new System.Windows.Forms.Button();
+            this.dtp_return_date = new System.Windows.Forms.DateTimePicker();
+            this.lbl_select_return_date = new System.Windows.Forms.Label();
+            this.lbl_show_issue_date = new System.Windows.Forms.Label();
+            this.lbl_issue_date = new System.Windows.Forms.Label();
+            this.lbl_show_book_name = new System.Windows.Forms.Label();
+            this.lbl_book_name = new System.Windows.Forms.Label();
             this.panel_search.SuspendLayout();
             this.panel_show_book.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_show_books)).BeginInit();
@@ -60,22 +60,6 @@ namespace Library
             this.panel_search.Size = new System.Drawing.Size(377, 251);
             this.panel_search.TabIndex = 0;
             // 
-            // lbl_enrolment_number
-            // 
-            this.lbl_enrolment_number.AutoSize = true;
-            this.lbl_enrolment_number.Location = new System.Drawing.Point(45, 38);
-            this.lbl_enrolment_number.Name = "lbl_enrolment_number";
-            this.lbl_enrolment_number.Size = new System.Drawing.Size(247, 25);
-            this.lbl_enrolment_number.TabIndex = 0;
-            this.lbl_enrolment_number.Text = "Enter Enrolment Number";
-            // 
-            // tb_search
-            // 
-            this.tb_search.Location = new System.Drawing.Point(48, 93);
-            this.tb_search.Name = "tb_search";
-            this.tb_search.Size = new System.Drawing.Size(256, 30);
-            this.tb_search.TabIndex = 1;
-            // 
             // btn_search
             // 
             this.btn_search.Location = new System.Drawing.Point(48, 160);
@@ -85,6 +69,22 @@ namespace Library
             this.btn_search.Text = "Search Books";
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // tb_search
+            // 
+            this.tb_search.Location = new System.Drawing.Point(48, 93);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.Size = new System.Drawing.Size(256, 30);
+            this.tb_search.TabIndex = 1;
+            // 
+            // lbl_enrolment_number
+            // 
+            this.lbl_enrolment_number.AutoSize = true;
+            this.lbl_enrolment_number.Location = new System.Drawing.Point(45, 38);
+            this.lbl_enrolment_number.Name = "lbl_enrolment_number";
+            this.lbl_enrolment_number.Size = new System.Drawing.Size(247, 25);
+            this.lbl_enrolment_number.TabIndex = 0;
+            this.lbl_enrolment_number.Text = "Enter Enrolment Number";
             // 
             // panel_show_book
             // 
@@ -118,30 +118,48 @@ namespace Library
             this.panel_book_info.Controls.Add(this.lbl_show_book_name);
             this.panel_book_info.Controls.Add(this.lbl_book_name);
             this.panel_book_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_book_info.Location = new System.Drawing.Point(50, 343);
+            this.panel_book_info.Location = new System.Drawing.Point(50, 289);
             this.panel_book_info.Name = "panel_book_info";
-            this.panel_book_info.Size = new System.Drawing.Size(1123, 182);
+            this.panel_book_info.Size = new System.Drawing.Size(1123, 236);
             this.panel_book_info.TabIndex = 2;
             this.panel_book_info.Visible = false;
             // 
-            // lbl_book_name
+            // btn_return_book
             // 
-            this.lbl_book_name.AutoSize = true;
-            this.lbl_book_name.Location = new System.Drawing.Point(40, 41);
-            this.lbl_book_name.Name = "lbl_book_name";
-            this.lbl_book_name.Size = new System.Drawing.Size(123, 25);
-            this.lbl_book_name.TabIndex = 0;
-            this.lbl_book_name.Text = "Book Name";
+            this.btn_return_book.Location = new System.Drawing.Point(833, 83);
+            this.btn_return_book.Name = "btn_return_book";
+            this.btn_return_book.Size = new System.Drawing.Size(213, 52);
+            this.btn_return_book.TabIndex = 7;
+            this.btn_return_book.Text = "Return Book";
+            this.btn_return_book.UseVisualStyleBackColor = true;
+            this.btn_return_book.Click += new System.EventHandler(this.btn_return_book_Click);
             // 
-            // lbl_show_book_name
+            // dtp_return_date
             // 
-            this.lbl_show_book_name.AutoSize = true;
-            this.lbl_show_book_name.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lbl_show_book_name.Location = new System.Drawing.Point(175, 41);
-            this.lbl_show_book_name.Name = "lbl_show_book_name";
-            this.lbl_show_book_name.Size = new System.Drawing.Size(170, 25);
-            this.lbl_show_book_name.TabIndex = 1;
-            this.lbl_show_book_name.Text = "PLACEHOLDER";
+            this.dtp_return_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_return_date.Location = new System.Drawing.Point(545, 123);
+            this.dtp_return_date.Name = "dtp_return_date";
+            this.dtp_return_date.Size = new System.Drawing.Size(172, 30);
+            this.dtp_return_date.TabIndex = 6;
+            // 
+            // lbl_select_return_date
+            // 
+            this.lbl_select_return_date.AutoSize = true;
+            this.lbl_select_return_date.Location = new System.Drawing.Point(540, 69);
+            this.lbl_select_return_date.Name = "lbl_select_return_date";
+            this.lbl_select_return_date.Size = new System.Drawing.Size(183, 25);
+            this.lbl_select_return_date.TabIndex = 4;
+            this.lbl_select_return_date.Text = "Select return date";
+            // 
+            // lbl_show_issue_date
+            // 
+            this.lbl_show_issue_date.AutoSize = true;
+            this.lbl_show_issue_date.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lbl_show_issue_date.Location = new System.Drawing.Point(42, 168);
+            this.lbl_show_issue_date.Name = "lbl_show_issue_date";
+            this.lbl_show_issue_date.Size = new System.Drawing.Size(392, 25);
+            this.lbl_show_issue_date.TabIndex = 3;
+            this.lbl_show_issue_date.Text = "PLACEHOLDER_BOOK_ISSUE_DATE";
             // 
             // lbl_issue_date
             // 
@@ -152,42 +170,24 @@ namespace Library
             this.lbl_issue_date.TabIndex = 2;
             this.lbl_issue_date.Text = "Issue Date";
             // 
-            // lbl_show_issue_date
+            // lbl_show_book_name
             // 
-            this.lbl_show_issue_date.AutoSize = true;
-            this.lbl_show_issue_date.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lbl_show_issue_date.Location = new System.Drawing.Point(175, 123);
-            this.lbl_show_issue_date.Name = "lbl_show_issue_date";
-            this.lbl_show_issue_date.Size = new System.Drawing.Size(170, 25);
-            this.lbl_show_issue_date.TabIndex = 3;
-            this.lbl_show_issue_date.Text = "PLACEHOLDER";
+            this.lbl_show_book_name.AutoSize = true;
+            this.lbl_show_book_name.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lbl_show_book_name.Location = new System.Drawing.Point(42, 83);
+            this.lbl_show_book_name.Name = "lbl_show_book_name";
+            this.lbl_show_book_name.Size = new System.Drawing.Size(317, 25);
+            this.lbl_show_book_name.TabIndex = 1;
+            this.lbl_show_book_name.Text = "PLACEHOLDER_BOOK_TITLE";
             // 
-            // lbl_select_return_date
+            // lbl_book_name
             // 
-            this.lbl_select_return_date.AutoSize = true;
-            this.lbl_select_return_date.Location = new System.Drawing.Point(419, 41);
-            this.lbl_select_return_date.Name = "lbl_select_return_date";
-            this.lbl_select_return_date.Size = new System.Drawing.Size(183, 25);
-            this.lbl_select_return_date.TabIndex = 4;
-            this.lbl_select_return_date.Text = "Select return date";
-            // 
-            // dtp_return_date
-            // 
-            this.dtp_return_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_return_date.Location = new System.Drawing.Point(424, 113);
-            this.dtp_return_date.Name = "dtp_return_date";
-            this.dtp_return_date.Size = new System.Drawing.Size(172, 30);
-            this.dtp_return_date.TabIndex = 6;
-            // 
-            // btn_return_book
-            // 
-            this.btn_return_book.Location = new System.Drawing.Point(777, 69);
-            this.btn_return_book.Name = "btn_return_book";
-            this.btn_return_book.Size = new System.Drawing.Size(213, 52);
-            this.btn_return_book.TabIndex = 7;
-            this.btn_return_book.Text = "Return Book";
-            this.btn_return_book.UseVisualStyleBackColor = true;
-            this.btn_return_book.Click += new System.EventHandler(this.btn_return_book_Click);
+            this.lbl_book_name.AutoSize = true;
+            this.lbl_book_name.Location = new System.Drawing.Point(40, 41);
+            this.lbl_book_name.Name = "lbl_book_name";
+            this.lbl_book_name.Size = new System.Drawing.Size(123, 25);
+            this.lbl_book_name.TabIndex = 0;
+            this.lbl_book_name.Text = "Book Name";
             // 
             // return_books
             // 

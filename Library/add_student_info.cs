@@ -3,6 +3,8 @@ using System.Data;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+// make sure no duplicate students, no students with same email/phone number. and more. 
+// add machine learning to make sure nobody uploads inappropriate content?
 
 namespace Library
 {
@@ -77,6 +79,7 @@ namespace Library
         private bool validate_data()
         {
             // add regex validators, for example phone number.
+            // Make sure enrolment number is unique - TO DO
             int enrolment_number;
             bool enrolment_number_success = Int32.TryParse(tb_enrolment_number.Text.ToString(), out enrolment_number);
 

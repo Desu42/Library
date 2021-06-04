@@ -52,6 +52,8 @@ namespace Library
         }
         private bool validate_data()
         {
+            // should check if book is already in the system
+            // replace purchase date with publication date? 
             int book_price;
             bool book_price_success = Int32.TryParse(tb_price.Text.ToString(), out book_price);
 
