@@ -6,6 +6,7 @@ namespace Library
     {
         public const int BOOK_MAX_QUANTITY = 100;
         public const int BOOK_MAX_PRICE = 1000;
+        public const string UNKNOWN = "Unknown";
 
         private string title;
         private string author;
@@ -47,9 +48,9 @@ namespace Library
         // Implicit constructor
         public Book()
         {
-            title = "Unknown";
-            author = "Unknown";
-            publication = "Unknown";
+            title = UNKNOWN;
+            author = UNKNOWN;
+            publication = UNKNOWN;
             purchase_date = Convert.ToString(DateTime.Now);
             price = 1;
             quantity = 1;

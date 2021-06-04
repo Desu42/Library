@@ -50,7 +50,7 @@ namespace Library
             }
 
         }
-        bool validate_data()
+        private bool validate_data()
         {
             int book_price;
             bool book_price_success = Int32.TryParse(tb_price.Text.ToString(), out book_price);

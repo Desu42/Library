@@ -92,6 +92,7 @@
     <Compile Include="return_books.Designer.cs">
       <DependentUpon>return_books.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student.cs" />
     <Compile Include="view_books.cs">
       <SubType>Form</SubType>
     </Compile>
