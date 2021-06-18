@@ -16,3 +16,6 @@ C# Library Management
 - send sms/email to student to return their books - DONE
 - find books by publication name/ author name - DONE
 
+# Needs polishing
+
+- add borrow limit to a person
